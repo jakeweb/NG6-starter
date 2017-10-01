@@ -1,6 +1,3 @@
-// import AlbumFactory from './album.factory';
-
-
 class SingleAlbumController {
   static $inject = ['Album', '$stateParams', 'ngDialog'];
 
@@ -42,7 +39,7 @@ class SingleAlbumController {
   }
 
   addVideo(videos) {
-    videos.push(this.newVideo);    
+    videos.push(this.newVideo);
     this.ngDialog.close();
   }
 
