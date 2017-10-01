@@ -16,4 +16,4 @@ Here's a list of available tasks:
 * `npm start` (which is the default task that runs when typing `gulp` without providing an argument)
   * runs `serve`.
 * `npm run component`
-  * scaffolds a new Angular component. [Read below](#generating-components) for usage details.
+  * scaffolds a new Angular component.
