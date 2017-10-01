@@ -1,14 +1,15 @@
 // import AlbumFactory from './album.factory';
 
 
-class SingleAlbumComponent {
-  static $inject = ['Album', '$stateParams'];
+class SingleAlbumController {
+  static $inject = ['Album', '$stateParams', 'ngDialog'];
 
-  constructor(Album, $stateParams) {
+  constructor(Album, $stateParams, ngDialog) {
     this.name = 'album single';
     this.albumService = Album;
     this.videos = [];
     this.$stateParams = $stateParams;
+    this.ngDialog = ngDialog;
   }
 
   $onInit() {
@@ -28,7 +29,16 @@ class SingleAlbumComponent {
     return this.albumService.getVideoUrl(video);
   }
 
+  openPopup() {
+    this.ngDialog.open({
+      template: './popup.html',
+      className: 'ngdialog-theme-default',
+      controller: SingleAlbumController,
+      controllerAs: '$ctrl'
+    });
+  }
+
 
 }
-SingleAlbumComponent.$inject = ['Album', '$stateParams'];
-export default SingleAlbumComponent;
+SingleAlbumController.$inject = ['Album', '$stateParams', 'ngDialog'];
+export default SingleAlbumController;

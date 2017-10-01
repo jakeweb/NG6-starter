@@ -13,7 +13,6 @@ class AlbumController {
   $onInit() {
     this.albumService.getVideos().then((response) => {
       this.albums = this.albumService.getAlbums(response.data);
-      console.log(this.albums);
     }).catch((err) => {
       console.log(err);
     });

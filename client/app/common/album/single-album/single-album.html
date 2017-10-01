@@ -1,2 +1,7 @@
-<iframe ng-repeat="video in $ctrl.videos" width="420" height="315" src="{{$ctrl.getVideoUrl(video)}}">
-</iframe>
+<div class="clearfix">
+  <iframe ng-repeat="video in $ctrl.videos" class="col col-30 video" src="{{$ctrl.getVideoUrl(video)}}">
+  </iframe>
+  <button ng-click="$ctrl.openPopup()">
+        Add Video
+  </button>
+</div>
