@@ -2,21 +2,33 @@
 
 
 class SingleAlbumComponent {
-  static $inject = ['Album'];
+  static $inject = ['Album', '$stateParams'];
 
-  constructor(Album) {
+  constructor(Album, $stateParams) {
     this.name = 'album single';
-    this.test = 'test';
     this.albumService = Album;
-    this.albums = [];
     this.videos = [];
+    this.$stateParams = $stateParams;
   }
 
   $onInit() {
 
+    this.albumService.getAlbumById(this.$stateParams.albumID).then((response) => {
+      this.videos = response;
+    }).catch((err) => {
+      console.log(err);
+    });
+  }
+
+  getVideoPoster(video) {
+    return this.albumService.getVideoPoster(video);
+  }
+
+  getVideoUrl(video) {
+    return this.albumService.getVideoUrl(video);
   }
 
 
 }
-SingleAlbumComponent.$inject = ['Album'];
+SingleAlbumComponent.$inject = ['Album', '$stateParams'];
 export default SingleAlbumComponent;
