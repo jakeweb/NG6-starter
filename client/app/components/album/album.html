@@ -1,8 +1,5 @@
-<section class="album">
-  <h1>Album</h1>
-  <h3>You can find me inside {{ $ctrl.test }}.html</h3>
-  <div ng-repeat="album in $ctrl.albums">
-    
+<section class="album full-height flex flex-valign flex-space-around">
+  <div ng-repeat="album in $ctrl.albums" class="video text-center">
     <a ui-sref="album({albumID: album.albumID})">
       <p>{{album.name}}</p>
       <img src="{{ $ctrl.getAlbumPoster(album)}}" alt="">

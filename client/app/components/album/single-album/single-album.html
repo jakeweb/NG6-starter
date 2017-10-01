@@ -1,7 +1,11 @@
-<div class="clearfix">
-  <iframe ng-repeat="video in $ctrl.videos" class="col col-30 video" src="{{$ctrl.getVideoUrl(video)}}">
-  </iframe>
-  <button ng-click="$ctrl.openPopup()">
-        Add Video
-  </button>
+<div class="full-height flex flex-valign">
+  <div class="flex flex-halign">
+    <button ng-click="$ctrl.openPopup()" class="button">
+      Add Video
+    </button>
+  </div>
+  <div class="flex flex-space-around">
+    <iframe ng-repeat="video in $ctrl.videos" class="video" src="{{$ctrl.getVideoUrl(video)}}">
+    </iframe>
+  </div>
 </div>
