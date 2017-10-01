@@ -1,11 +1,11 @@
 <h1 class="text-center">Add new video</h1>
-<form ng-submit="$ctrl.addVideo($ctrl.videos)" class="form">
+<form ng-submit="$ctrl.addVideo($ctrl.videos)" class="form" name="popupForm">
   <div>
-    <input type="text" ng-model="$ctrl.newVideo.title" placeholder="Video Title" class="input">
+    <input type="text" ng-model="$ctrl.newVideo.title" placeholder="Video Title" class="input" required>
   </div>
   <div>
-    <input type="text" ng-model="$ctrl.newVideo.link" placeholder="Url" class="input">
+    <input type="text" ng-model="$ctrl.newVideo.link" placeholder="Url" class="input" required>
   </div>
   <textarea ng-model="$ctrl.newVideo.description" placeholder="Description" class="textarea"></textarea>
-  <button type="submit" class="button button-block">Save</button>
+  <button type="submit" ng-disabled="popupForm.$invalid" class="button button-block">Save</button>
 </form>
