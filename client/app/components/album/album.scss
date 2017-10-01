@@ -1,9 +1,21 @@
 @import "../../_variables";
+.album {
+    padding: 15px;
+    .album-poster {
+        display: block;
+        width: 100%;
+    }
+}
+
 .video {
     width: 40%;
     min-width: 300px;
     min-height: 300px;
     margin: 15px 0;
+    @media screen and (max-width: 768px) {
+        width: 100%;
+        min-width: 0;
+    }
 }
 
 .flex {

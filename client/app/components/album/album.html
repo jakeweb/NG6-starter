@@ -2,7 +2,7 @@
   <div ng-repeat="album in $ctrl.albums" class="video text-center">
     <a ui-sref="album({albumID: album.albumID})">
       <p>{{album.name}}</p>
-      <img src="{{ $ctrl.getAlbumPoster(album)}}" alt="">
+      <img src="{{ $ctrl.getAlbumPoster(album)}}" class="album-poster" alt="">
     </a>
   </div>
 </section>
