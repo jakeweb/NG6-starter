@@ -22,6 +22,7 @@ class AlbumService {
     });
     for (let prop in albumsTmp) {
       albums.push({
+        id: albumsTmp[prop][0].id,
         name: prop,
         data: albumsTmp[prop]
       });
