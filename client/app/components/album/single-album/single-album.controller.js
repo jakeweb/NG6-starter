@@ -12,6 +12,8 @@ class SingleAlbumController {
   $onInit() {
     this.albumService.getAlbumById(this.$stateParams.albumID).then((response) => {
       this.albumService.writeVideos(response);
+      this.albumName = response[0].album;
+      this.albumDescription = response[0].albumDescription;
       this.videos = this.albumService.readVideos();
     }).catch((err) => {
       console.log(err);
