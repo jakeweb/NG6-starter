@@ -1,0 +1,65 @@
+@import "../../_variables";
+.album {
+    padding: 15px;
+    .album-poster {
+        display: block;
+        width: 100%;
+    }
+}
+
+.video-container {
+    width: 40%;
+    min-width: 300px;
+    margin: 15px 0;
+    @media screen and (max-width: 768px) {
+        width: 100%;
+        min-width: 0;
+    }
+    .video {
+        min-height: 400px;
+        width: 100%;
+    }
+}
+
+.flex {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    &.flex-valign {
+        align-items: center;
+    }
+    &.flex-halign {
+        justify-content: center;
+    }
+    &.flex-space-around {
+        justify-content: space-around;
+    }
+}
+
+.form {
+    .input,
+    .textarea {
+        width: 100%;
+        padding: 10px 15px;
+        margin: 7px 0;
+        border: none;
+    }
+    .textarea {
+        min-height: 150px;
+        resize: vertical;
+    }
+}
+
+.button {
+    background: $blue;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 15px;
+    color: $white;
+    &.button-block {
+        width: 100%;
+    }
+    &:disabled {
+        opacity: 0.4;
+    }
+}

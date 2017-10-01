@@ -1,0 +1,16 @@
+<div class="album full-height">
+  <div class=" flex flex-valign">
+    <div class="flex flex-halign">
+      <button ng-click="$ctrl.openPopup()" class="button">
+        Add Video
+      </button>
+    </div>
+    <div class="flex flex-space-around">
+      <div ng-repeat="video in $ctrl.videos" class="video-container">
+        <iframe class="video" src="{{$ctrl.getVideoUrl(video)}}">
+        </iframe>
+        <p>{{video.description}}</p>
+      </div>
+    </div>
+  </div>
+</div>
