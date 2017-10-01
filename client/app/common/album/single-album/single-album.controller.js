@@ -5,17 +5,17 @@ class SingleAlbumController {
   static $inject = ['Album', '$stateParams', 'ngDialog'];
 
   constructor(Album, $stateParams, ngDialog) {
-    this.name = 'album single';
-    this.albumService = Album;
-    this.videos = [];
     this.$stateParams = $stateParams;
     this.ngDialog = ngDialog;
+    this.albumService = Album;
+    this.videos = this.albumService.readVideos();
+    this.newVideo = {};
   }
 
   $onInit() {
-
     this.albumService.getAlbumById(this.$stateParams.albumID).then((response) => {
-      this.videos = response;
+      this.albumService.writeVideos(response);
+      this.videos = this.albumService.readVideos();
     }).catch((err) => {
       console.log(err);
     });
@@ -34,10 +34,17 @@ class SingleAlbumController {
       template: './popup.html',
       className: 'ngdialog-theme-default',
       controller: SingleAlbumController,
-      controllerAs: '$ctrl'
+      controllerAs: '$ctrl',
+      data: {
+        videos: this.videos
+      },
     });
   }
 
+  addVideo(videos) {
+    videos.push(this.newVideo);    
+    this.ngDialog.close();
+  }
 
 }
 SingleAlbumController.$inject = ['Album', '$stateParams', 'ngDialog'];

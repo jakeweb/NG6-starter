@@ -1,11 +1,11 @@
 <h1>Add new video</h1>
-<form>
+<form ng-submit="$ctrl.addVideo($ctrl.videos)">
   <div>
-    <input type="text" placeholder="Video Title">
+    <input type="text" ng-model="$ctrl.newVideo.title" placeholder="Video Title">
   </div>
   <div>
-    <input type="text" placeholder="Url">
+    <input type="text" ng-model="$ctrl.newVideo.link" placeholder="Url">
   </div>
-  <textarea name="" id="" cols="30" rows="10" placeholder="Description"></textarea>
+  <textarea name="" id="" cols="30" rows="10" ng-model="$ctrl.newVideo.description" placeholder="Description"></textarea>
   <button type="submit">Save</button>
 </form>

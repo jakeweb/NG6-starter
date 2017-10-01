@@ -5,10 +5,19 @@ class AlbumService {
     this.$http = $http;
     this.$q = $q;
     this.$sce = $sce;
+    this.videos = [];
   }
 
   getVideos() {
     return this.$http.get('local.json');
+  }
+
+  readVideos() {
+    return this.videos;
+  }
+
+  writeVideos(videos) {
+    this.videos = videos;
   }
 
   getAlbums(videos) {
